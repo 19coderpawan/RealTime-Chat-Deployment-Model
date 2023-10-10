@@ -4,7 +4,7 @@ import Login from './pages component/Login';
 import Signup from './pages component/Signup';
 import Home from './pages component/Home'
 import './style.scss';
-import { BrowserRouter as Router, Routes, Link, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes,  Route } from 'react-router-dom';
 import { Authcontext } from './Context Api/Authcontext';
 import { useContext } from 'react';
 

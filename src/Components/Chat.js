@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Messages_section from './Messages_section'
 import Input_send from './Input_send'
-import { Authcontext } from '../Context Api/Authcontext'
+// import { Authcontext } from '../Context Api/Authcontext'
 import { Chatcontext } from '../Context Api/Chatcontext'
 
 const Chat = () => {

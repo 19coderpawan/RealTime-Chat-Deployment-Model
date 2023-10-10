@@ -1,6 +1,6 @@
-import { onAuthStateChanged } from "firebase/auth";
-import {  createContext,useContext,useEffect, useReducer, useState } from "react";
-import { auth } from "../Firebase";
+// import { onAuthStateChanged } from "firebase/auth";
+import {  createContext,useContext, useReducer } from "react";
+// import { auth } from "../Firebase";
 import { Authcontext } from "./Authcontext";
 // create the contextApi.
 export const Chatcontext=createContext();
