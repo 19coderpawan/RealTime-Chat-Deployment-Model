@@ -1,0 +1,432 @@
+/*************** Here how can we use  Sass function to make the web responsive **********************/
+/* for that we are going to use the @mixin .*/
+@mixin mobile{
+    @media screen and (max-width:560px) {
+        @content;
+    }
+}
+@mixin tablets{
+    @media screen and (max-width:768px) {
+        @content;
+    }
+}
+@mixin Laptop{
+    @media screen and (max-width:1254px) {
+        @content;
+    }
+}
+
+body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.FormContainer {
+    background-color: #a7bcff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+.formWrapper {
+    background-color: azure;
+    padding: 40px 180px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+    .logo {
+        font-weight: bold;
+        font-size: 40px;
+        color: darkblue;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 20px;
+        color: darkblue;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+        input {
+            outline: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 50px;
+            border: none;
+            width: 100%;
+            border-bottom: 1px solid darkblue;
+            font-size:20px;
+
+            &::placeholder {
+                color: gray;
+                font-size: 15px;
+                text-transform: capitalize;
+            }
+        }
+
+
+        button {
+            padding: 20px;
+            background-color: #7b96ec;
+            font-weight: bolder;
+            font-size: 20px;
+            border-radius: 30px;
+            transition: all 0.3s linear;
+        }
+
+        button:hover {
+            background-color: white;
+            color: aqua;
+            cursor: pointer;
+        }
+
+        label {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+
+        label:hover {
+            cursor: pointer;
+        }
+        /* HTML: <div class="loader"></div> */
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    border: 4px solid #0000;
+    border-radius: 50%;
+    border-color: #ccc #0000;
+    animation: l16 1s infinite linear;
+  }
+  .loader::before,
+  .loader::after {    
+    content: "";
+    grid-area: 1/1;
+    margin: 2px;
+    border: inherit;
+    border-radius: 50%;
+  }
+  .loader::before {
+    border-color: #f03355 #0000;
+    animation: inherit; 
+    animation-duration: .5s;
+    animation-direction: reverse;
+  }
+  .loader::after {
+    margin: 8px;
+  }
+  @keyframes l16 { 
+    100%{transform: rotate(1turn)}
+  }
+
+        // .loader{
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: center;
+        //     border:16px solid grey;
+        //     border-radius:50%;
+        //     width:60px;
+        //     height:60px;
+        //     border-top:16px solid aqua;
+        //     animation: spin 2s linear infinite;
+
+        //     @keyframes spin {
+        //         0%{
+        //             transform: rotate(0deg);
+        //         }
+        //         100%{
+        //             transform: rotate(360deg);
+        //         }
+        //     }
+        // }
+
+    }
+}
+
+
+/************Home Styling************************/
+
+.home {
+    background-color: #7b96ec;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mobile{
+        background-color: red;
+    }
+
+    .container {
+        border: 1px solid black;
+        border-radius: 10px;
+        height: 65%;
+        width: 55%;
+        display: flex;
+        overflow: hidden;
+        
+        
+        @include tablets{
+            height:90%;
+            width: 90%;
+        }
+        @include mobile{
+            height: 100%;
+            width:100%;
+        }
+        .sidebar {
+            flex: 1;
+            background-color: #2f2d52;
+            overflow: hidden;
+            @include tablets{
+                width: 50%;
+            }
+            @include mobile{
+                width: 70%;
+            }
+
+            /********Navbar************/
+
+            .nav {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border: none;
+                background-color: #403d85;
+                height: 50px;
+                padding: 10px;
+                color: #ffff;
+
+                .logo {
+                    font-weight: bold;
+                    font-size: 20px;
+                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    @include Laptop(){
+                        display: none;
+                    }
+                }
+
+                .usernav {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    
+                    img {
+                        background-color: #7b96ec;
+                        height: 30px;
+                        width: 30px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    .name {
+                        text-transform: capitalize;
+                        font-weight: bold;
+                        font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    }
+
+                    button {
+                        background-color: #4f65b3;
+                        border: none;
+                        border-radius: 10px;
+                        width: 50px;
+                        height: 30px;
+                        color: #ffff;
+                        text-align: center;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            /**********Serach***************/
+            .search {
+                input{
+                width: 100%;
+                height: 30px;
+                outline: none;
+                border: none;
+                background: transparent;
+                color: #ffff;
+                font-size: 20px;
+                padding:20px;
+                } 
+            }
+            .chatmember{
+                overflow-y: scroll;
+            }
+            .userchat{
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                padding:10px;
+                
+
+                &:hover{
+                    background-color: #3c3968;
+                    cursor: pointer;
+                }
+
+                img{
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                }
+                span{
+                    color:white;
+                    font-weight: bold;
+                    font-size: 15px;
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                }
+            }
+        }
+
+        .chat {
+            flex: 2;
+            
+            .chatinfo{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding:10px;
+                background-color: #6763b7;
+                height: 50px;
+            
+            span{
+                font-weight: bold;
+                color:#ffff;
+                font-size:20px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            .chaticons{
+                display: flex;
+                align-items: center;
+                gap:15px;
+                color:white;
+                cursor: pointer;
+            }
+        }
+
+
+        /******************* Message styling *************************/
+        .messages_section{
+            background-color: #a4b1db;
+            padding: 10px;
+            height: calc(100% - 160px);
+            overflow-y: scroll;
+            /************ Message Content Styling **********************/
+            .message{
+                display: flex;
+                gap:15px;
+                margin-bottom: 30px;
+                padding:18px;
+                
+                .messageinfo{
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 20px;
+                    img{
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                    span{
+                        // padding:0px 10px;
+                        font-weight: bold;
+                        font-size:12px;
+                        color:#ffff;
+                        // width: 10px;
+                    }
+                }
+
+                .messagecontent{
+                    display: flex;
+                    flex-direction: column;
+                    gap:10px;
+                    
+                    span{
+                        background-color: #ffff;
+                        padding:10px;
+                        border-radius: 0px 15px 15px 15px;
+                        max-width: max-content;
+                    }
+                    img{
+                        width: 50%;
+                    }
+                    
+                }
+            /******** .message class as well as .ownerclass then**************/
+               &.owner{
+                flex-direction: row-reverse;
+                .messagecontent{
+                    align-items: flex-end;
+                    span{
+                    background-color: rgb(93, 209, 209);
+                    color:#ffff;
+                    border-radius: 15px 0px 15px 15px; 
+                    }
+                   
+
+                    img{
+                        width: 50%;
+                        
+                    }
+                }
+                
+               }
+            }
+        }
+
+        .inputsend{
+            background-color: #ffff;
+            height: 50px;
+            padding:10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            input{
+                border:none;
+                background: transparent;
+                outline:none;
+                font-size: 20px;
+            }
+
+            .sendicons{
+                display: flex;
+                align-items: center;
+                gap:25px;
+
+                cursor: pointer;
+                label{
+                    display: flex;
+                    align-items: center;
+                    gap:15px;
+                    cursor: pointer;
+                }
+                .fa-paperclip:hover{
+                    color:aqua;
+                }
+                .fa-image:hover{
+                    color:aqua;
+                }
+                .fa-paper-plane:hover{
+                    color:aqua;
+                }
+            }
+        }
+            
+        }
+    }
+}
