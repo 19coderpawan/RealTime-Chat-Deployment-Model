@@ -3,7 +3,7 @@ import {Authcontext} from '../Context Api/Authcontext'
 import { db } from '../Firebase';
 import { onSnapshot,doc } from 'firebase/firestore';
 import { Chatcontext } from '../Context Api/Chatcontext';
-const Chats_member = () => {
+const Chatsmember = () => {
   // This will hold the searched users data and the last message between the curruser and the serached user.
   const [chatuser,setchatuser]=useState([]);
   const{currentUser}=useContext(Authcontext);
@@ -50,4 +50,4 @@ const Chats_member = () => {
   )
 }
 
-export default Chats_member
+export default Chatsmember

@@ -1,13 +1,13 @@
 import React from 'react'
 import Navbar from './Navbar'
 import Search from './Search'
-import Chats_member from './Chats_member'
+import Chatsmember from './Chatsmember'
 const Sidebar = () => {
   return (
     <div className='sidebar'>
       <Navbar/>
       <Search/>
-      <Chats_member/>
+      <Chatsmember/>
     </div>
   )
 }

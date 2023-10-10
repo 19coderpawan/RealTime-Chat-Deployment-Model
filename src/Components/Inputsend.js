@@ -6,7 +6,7 @@ import { db, storage } from '../Firebase';
 import {v4 as uuidv4} from 'uuid';// this will generate unique uid each time.
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 
-const Input_send = () => {
+const Inputsend = () => {
  const [text,settext]=useState("");
  const [img,setimg]=useState(null);
 
@@ -87,4 +87,4 @@ const Input_send = () => {
   )
 }
 
-export default Input_send
+export default Inputsend

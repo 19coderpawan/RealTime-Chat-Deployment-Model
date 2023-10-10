@@ -4,7 +4,7 @@ import { Chatcontext } from '../Context Api/Chatcontext'
 import { doc, onSnapshot } from 'firebase/firestore';
 import { db } from '../Firebase';
 
-const Messages_section = () => {
+const Messagessection = () => {
   const {data}=useContext(Chatcontext);
   // and then also create an state that will hold the messages.
   const [messages,setmessages]=useState([]);
@@ -30,4 +30,4 @@ const Messages_section = () => {
   )
 }
 
-export default Messages_section
+export default Messagessection

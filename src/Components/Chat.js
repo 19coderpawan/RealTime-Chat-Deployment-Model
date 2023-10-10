@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import Messages_section from './Messages_section'
-import Input_send from './Input_send'
+import Messagessection from './Messagessection'
+import Inputsend from './Inputsend'
 // import { Authcontext } from '../Context Api/Authcontext'
 import { Chatcontext } from '../Context Api/Chatcontext'
 
@@ -18,8 +18,8 @@ const Chat = () => {
         <i class="fa-solid fa-list"></i>
         </div>
       </div>
-      <Messages_section/>
-      <Input_send/>
+      <Messagessection/>
+      <Inputsend/>
     </div>
   )
 }
